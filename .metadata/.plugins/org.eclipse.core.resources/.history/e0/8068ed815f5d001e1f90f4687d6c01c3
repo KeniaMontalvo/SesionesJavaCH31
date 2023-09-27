@@ -1,0 +1,44 @@
+package logicOperators;
+
+public class OperadoresLogicos {
+	public static void main(String[] args) {
+		/*
+		 -- Operadores aritméticos (+,-,*,/,%)
+		 -- Operadores lógicos
+		 -- Operadores relacionales (=,+=,-=,/=,<,>,<=,>=)
+		 */
+		
+		//Mala práctica nombrar variables num1, num2...
+		int num1 = 12;
+		int num2 = 7;
+		
+		int resultado = num1 % num2;
+		System.out.println(resultado);
+		
+		/*
+		double num1 = 12d;
+		double num2 = 7d;
+		
+		double resultado = num1 / num2;
+		System.out.println(resultado);
+		 */
+		
+		/*Relacionales
+			= asignación
+			+= asignación suma
+			-= asignación resta
+		 	*= asignación multiplicación
+			/= asignación división
+			== igual que
+			!= distinto que
+			< menor que
+			> mayor que
+			<= menor igual que
+			>= mayor igual que
+		 */
+		System.out.println(num1 >= num2);
+		
+		
+		
+	}
+}

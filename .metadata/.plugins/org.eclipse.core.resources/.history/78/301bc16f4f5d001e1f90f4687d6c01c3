@@ -1,0 +1,14 @@
+package dataTypes;
+
+public class DatosEstructurados {
+	public static void main(String[] args) {
+		/*
+		 * Datos estructurados. Son datos complejos que almacenan caracteres y/o cadenas de caracteres o bien, algún tipo de dato primitivo.
+		 * -- String. Cadena de caracteres, se declaran entre comillas y hay que definir el tipo de dato con la palabra reservada String.
+		 * -- Arrays.
+		 * -- Creados por el usuario (API Java) 
+		 */
+		String myString = "Hola, soy un String";
+		System.out.println(myString);
+	}
+}
