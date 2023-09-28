@@ -365,3 +365,20 @@ org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Content is not al
 	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:228)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.core 4 0 2023-09-28 13:19:09.237
+!MESSAGE An exception occurred during push on URI https://github.com/KeniaMontalvo/SesionesJavaCH31.git: https://github.com/KeniaMontalvo/SesionesJavaCH31.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/KeniaMontalvo/SesionesJavaCH31.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:696)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:638)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:542)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:140)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1540)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-09-28 13:19:09.257
+!MESSAGE Can't connect to any repository: https://github.com/KeniaMontalvo/SesionesJavaCH31.git (https://github.com/KeniaMontalvo/SesionesJavaCH31.git: not authorized)
