@@ -36,9 +36,17 @@ public class ForLoops {
 			System.out.println();
 		}
 		
+		//Java API - Math
+		//Calcular 5 potencias del valor PI y mostrar en consola el valor de cada una de ellas
+		//Output: PI elevado a la 1 potencia es igual a: 3.141592653589793
+		//PI elevado a la 2 potencia es igual a ...
+		System.out.println("El valor de PI es " + Math.PI);
 		
-		
+		int potencias = 5;
+		for (int base = 1; base <= potencias; base++) {
+			double resultado = Math.pow(Math.PI, base);
+			System.out.println("PI elevado a la " + base + " es igual a " + resultado);
+		}
 			
 	}
-
 }
