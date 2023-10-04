@@ -19,5 +19,21 @@ public class Test {
 		Simi.calcularSalario();
 		Simi.imprimirDentista();
 		
+		
+		//Instancia de Paciente con todos los datos
+		Paciente Chencho = new Paciente("CHNCH1234", "RH Positivo", true, true, "05/Oct/2023", "Doc. Simi Lares", false);
+		System.out.println("****************");
+		System.out.println(Chencho);
+		
+		//Instancia de Paciente con datos obligatorios
+		Paciente Masiosare = new Paciente("MASI12345", false, false);
+		System.out.println("****************");
+		System.out.println(Masiosare);
+		
+		//Cambiar el false de seguroMedico a true
+		Masiosare.seguroGastosMedicos= true;
+		System.out.println("****************");
+		System.out.println(Masiosare);
+	
 	}
 }

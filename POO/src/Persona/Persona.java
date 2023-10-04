@@ -31,9 +31,13 @@ public class Persona {
 	void saludar() {
 		System.out.println("Hola, te mando saluditos");
 	}
-	
-	//Método principal vacío y main. Que maneja strings
-	public static void main (String[] args) {
-	
+
+
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", telefono=" + telefono
+				+ ", email=" + email + "]";
 	}
+	
+	
 }
