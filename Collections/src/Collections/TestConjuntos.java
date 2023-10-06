@@ -21,7 +21,9 @@ public class TestConjuntos {
 		
 		System.out.println("HashSet");
 		System.out.println("Correos electrónicos registrados de pacientes inscritos a promociones");
+		
 		Set<String> correosHash = new HashSet<>();
+		
 		correosHash.add("zoro@gmail.com");
 		correosHash.add("sanji@hotmail.com");
 		correosHash.add("luffy@outlook.com");
@@ -39,7 +41,9 @@ public class TestConjuntos {
 		System.out.println("*************");
 		System.out.println("TreeSet");
 		System.out.println("Pacientes ordenados por apellido");
+		
 		Set<String> nombresTree = new TreeSet<>();
+		
 		nombresTree.add("Monkey D. Luffy");
 		nombresTree.add("Roronoa Zoro");
 		nombresTree.add("Vinsmoke Sanji");
@@ -58,7 +62,9 @@ public class TestConjuntos {
 		System.out.println("*************");
 		System.out.println("LinkedHashSet");
 		System.out.println("Horarios y fechas para citas");
+		
 		Set<String> citasLinkedHash = new LinkedHashSet<>();
+		
 		citasLinkedHash.add("11:00 6/Oct/2023");
 		citasLinkedHash.add("11:00 6/Oct/2023"); //No acepta doble cita a la misma hora y día
 		citasLinkedHash.add("15:00 6/Oct/2023");
