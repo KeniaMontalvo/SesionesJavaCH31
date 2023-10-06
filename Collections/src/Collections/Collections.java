@@ -8,7 +8,16 @@ public class Collections {
 		//Tipo de dato del array, nombre, instancia del objeto arreglo y los datos.
 		String[] listaDeCompras = new String[] {"Leche", "Pan", "Huevos"};
 		
+		//Solo muestra espacio en memoria
 		System.out.println(listaDeCompras);
+		
+		//Imprimir información de listaDeCompras con un forEach
+		
+		//Para el dato de tipo String que llamaremos productoAImprimir de la lista de compras, lo vamos a tomar y lo vamos a imprimir
+		for(String productoAImprimir : listaDeCompras) {
+			//Muestra información del array
+			System.out.println(productoAImprimir);
+		}
 		
 		
 		
