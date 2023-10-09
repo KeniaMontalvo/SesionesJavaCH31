@@ -17,9 +17,13 @@ public class TestFiguras {
 		//3. Instancia de un círculo
 		Figura Circulo = new Circulo(3.14, 3.0);
 		
+		//4. Instancia de un cuadrado
+		Figura Cuadrado = new Cuadrado(5);
+		
 		//Invocación del método
 		System.out.println(Rectangulo.calcularArea());
 		System.out.println(Circulo.calcularArea());
+		System.out.println(Cuadrado.calcularArea());
 		
 	}
 
