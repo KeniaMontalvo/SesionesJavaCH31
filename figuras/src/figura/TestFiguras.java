@@ -9,7 +9,6 @@ public class TestFiguras {
 		
 		//1. Instancia de la clase Figura
 		//Figura Generica = new Figura();
-		
 
 		//2. Intancia de un rectángulo
 		Figura Rectangulo = new Rectangulo(0.5,6.5);
