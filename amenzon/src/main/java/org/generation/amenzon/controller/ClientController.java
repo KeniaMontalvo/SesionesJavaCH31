@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController //Decimos que es una API Rest que trabaja con métodos GET, PUT, POST y DELETE
 @RequestMapping(path = "/users/clients") //Aquí defino la ruta de nuestra API, es decir, el endpoint... http://localhost:8080/users/clients
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET}) //Mediante origen cruzado, puedo manejar problemas de seguridad. Me permite acceder desde cualquier origina (dominio) a los métodos HTTP
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST, RequestMethod.PUT}) //Mediante origen cruzado, puedo manejar problemas de seguridad. Me permite acceder desde cualquier origina (dominio) a los métodos HTTP
 
 
 public class ClientController {
@@ -58,5 +59,19 @@ public class ClientController {
 	public void postClient(@RequestBody Client client) {
 		clientService.addClient(client);
 	}
+	
+	
+	//Método para controlar el Service y actualizar clientes
+	@PutMapping(path = "{id}")
+	public Client updateClient(@PathVariable("id") Long id, @RequestBody Client client) {
+		client.setId(id);
+		return clientService.updateClient(client);
+	}
+	
+	
+	
+	
+	
+	
 	
 }

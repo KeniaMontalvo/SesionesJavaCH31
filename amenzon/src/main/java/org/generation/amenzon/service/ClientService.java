@@ -69,6 +69,11 @@ public class ClientService {
 	}
 
 	
+	//Método PUT. Permite actualizar la información de un cliente, lo haremos mediante actualización de cualquier atributo.
+	public Client updateClient(Client client) {
+		return clientRepository.save(client);
+	}
+	
 	
 	
 }
