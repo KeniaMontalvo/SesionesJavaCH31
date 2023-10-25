@@ -1,11 +1,12 @@
 package org.generation.amenzon.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.generation.amenzon.model.Client;
 import org.generation.amenzon.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController //Decimos que es una API Rest que trabaja con métodos GET, PUT, POST y DELETE
@@ -39,6 +41,7 @@ public class ClientController {
 		return clientService.getClients();
 	}
 	
+	/*
 	//Conectar mi Service y Controller para buscar un cliente por Id
 	//Debo indicar el URI específico del Id
 	//Debo indicar cuál será el PathVariable y el tipo de dato
@@ -46,8 +49,31 @@ public class ClientController {
 	public Optional<Client> getClient(@PathVariable("id") Long id){
 		return clientService.getClient(id);
 	}
+	*/
 	
 	
+	//-----------------------------------------------//
+	//Crear un método Get by Id utilizando una query personalizada que incluye parámetros de consulta
+	@GetMapping(path = "/id")
+	public ResponseEntity<Client> getClientById (@RequestParam Long id){
+		Client client = clientService.getClientById(id);
+		return new ResponseEntity<>(client, HttpStatus.OK);
+	}
+	//-----------------------------------------------//
+		
+
+		
+	//-----------------------------------------------//
+	//Crear un método Get by Email utilizando una query personalizada que incluye parámetros de consulta
+	@GetMapping(path = "/byEmail")
+	public ResponseEntity<Client> getClientByEmail (@RequestParam String email){
+		Client client = clientService.getClientByEmail(email);
+		return new ResponseEntity<>(client, HttpStatus.OK);
+	}
+	//-----------------------------------------------//
+
+		
+		
 	//Método para eliminar clientes por Id. Necesito definir la URI correspondiente al Id, el @PathVariable y el tipo de dato sobre el cual actúa
 	@DeleteMapping(path = "{id}")
 	public void deleteClient(@PathVariable("id") Long id) {

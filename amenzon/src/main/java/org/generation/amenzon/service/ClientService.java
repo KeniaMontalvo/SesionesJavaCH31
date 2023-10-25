@@ -26,12 +26,33 @@ public class ClientService {
 		return clientRepository.findAll();
 	}
 	
-	
+	/*
 	//Método GET para traer un solo cliente por su id
 	//Se convierte en método de tipo Optional para no terminar con el proceso del servidor, sino que permite la ejecución aún cuando el resultado es false
 	public Optional<Client> getClient(Long id) {
 		return clientRepository.findById(id);
 	}
+	*/
+	
+	
+	//-----------------------------------------------//
+	//Crear un método Get by Id utilizando una query personalizada que incluye parámetros de consulta
+	public Client getClientById(Long id) {
+		return clientRepository.getById(id);
+	}
+	//-----------------------------------------------//
+	
+	
+	//-----------------------------------------------//
+	//Crear un método Get by Email utilizando una query personalizada que incluye parámetros de consulta
+	public Client getClientByEmail(String email) {
+		return clientRepository.getByEmail(email);
+	}
+	//-----------------------------------------------//
+	
+	
+	
+	
 	
 	
 	//Método GET para traer un solo cliente por su id
