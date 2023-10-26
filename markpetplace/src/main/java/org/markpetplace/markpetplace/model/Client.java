@@ -1,4 +1,4 @@
-package org.markpetplace.model;
+package org.markpetplace.markpetplace.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,11 +9,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-
 public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idUsuario", unique=true, nullable=false)
+	@Column(name="idUsuario", unique=true, nullable=false)
 	private Long id;
 	private String nombreUsuario;
 	private String contrasenia;

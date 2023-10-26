@@ -1,10 +1,10 @@
-package org.markpetplace.service;
+package org.markpetplace.markpetplace.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import org.markpetplace.model.Client;
-import org.markpetplace.repository.ClientRepository;
+import org.markpetplace.markpetplace.model.Client;
+import org.markpetplace.markpetplace.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +29,8 @@ public class ClientService {
 	}
 	
 		
-	public Client getClientByEmail(String correo) {
-		return clientRepository.getByEmail(correo);
+	public Client getClientByCorreo(String correo) {
+		return clientRepository.getByCorreo(correo);
 	}
 	
 	
@@ -50,8 +50,8 @@ public class ClientService {
 			
 			//Como necesito recurrir a una evaluación true o false, utilizo un Optional en el Objeto a evaluar y asigno una variable. Dentro de esta variable de tipo Optional invoco el método de Repository para encontrar el usuario por email y hacer mi sentencia condicional
 			//PERO como no tengo un método "findByEmail" que provenga de manera nativa de JpaRepository, tengo que crearlo en Repository...
-			Optional<Client> clientByEmail = clientRepository.findByEmail(client.getCorreo()); //Usando la Query personalizada de Repository puedo acceder al valor de email del Client (getter)
-			if(clientByEmail.isPresent()) {
+			Optional<Client> clientByCorreo = clientRepository.findByCorreo(client.getCorreo()); //Usando la Query personalizada de Repository puedo acceder al valor de email del Client (getter)
+			if(clientByCorreo.isPresent()) {
 				throw new IllegalStateException("El cliente ya se encuentra registrado");
 			}
 			clientRepository.save(client);

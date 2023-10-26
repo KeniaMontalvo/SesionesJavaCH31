@@ -1,9 +1,9 @@
-package org.markpetplace.controller;
+package org.markpetplace.markpetplace.controller;
 
 import java.util.List;
 
-import org.markpetplace.model.Client;
-import org.markpetplace.service.ClientService;
+import org.markpetplace.markpetplace.model.Client;
+import org.markpetplace.markpetplace.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/usuario")
+@RequestMapping(path = "/users")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST, RequestMethod.PUT})
 
 public class ClientController {
@@ -46,7 +46,7 @@ public class ClientController {
 	
 	@GetMapping(path = "/byEmail")
 	public ResponseEntity<Client> getClientByEmail (@RequestParam String correo){
-		Client client = clientService.getClientByEmail(correo);
+		Client client = clientService.getClientByCorreo(correo);
 		return new ResponseEntity<>(client, HttpStatus.OK);
 	}
 	
